@@ -16,19 +16,16 @@ if not os.path.exists(DIRECTORY_PATH):
     os.makedirs(DIRECTORY_PATH)
 
 async def start_browser():
-    """Ініціалізація браузера та сторінки."""
     browser = await launch(headless=True, args=['--no-sandbox'])
     webpage = await browser.newPage()
     await webpage.setViewport({'width': WIDTH, 'height': HEIGHT})
     return browser, webpage
 
 def get_urls(message: str) -> list[str]:
-    """Функція для отримання списку URL з повідомлення."""
     regex = r"(https?://[^\s]+)"
     return re.findall(regex, message)
 
 def get_file_name(url: str) -> str:
-    """Функція для створення імені файлу на основі URL."""
     u_start = re.sub(r'https?://', '', url)
     u_clean = u_start.replace('/', '_').replace(':', '_')
     return f'{dt.now().strftime("%Y-%m-%d_%H-%M-%S")}_{u_clean}.png'
