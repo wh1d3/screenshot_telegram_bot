@@ -16,8 +16,8 @@ Telegram Screenshot Bot is a simple bot that takes a URL from a user, navigates 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/telegram-screenshot-bot.git
-   cd telegram-screenshot-bot
+   git clone https://github.com/wh1d3/screenshot_telegram_bot.git
+   cd screenshot_telegram_bot
    ```
 2. Create a virtual environment and install dependencies:
      ```bash
